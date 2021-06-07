@@ -1,0 +1,1 @@
+export const DEV = '__BACKEND_DEV_URL__';

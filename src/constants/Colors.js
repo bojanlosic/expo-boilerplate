@@ -1,0 +1,15 @@
+export default {
+  primary: "rgba(94, 156, 96, 1);",
+  primaryBackground: "rgba(217, 239, 217, 0.6);",
+  secondary: "rgba(227, 89, 89, 1);",
+  secondaryBackground: "rgba(249, 196, 196, 0.6);",
+  background: "rgba(255, 255, 255, 1);",
+  lightGreen: "rgba(242, 249, 242, 1);",
+  lightRed: "rgba(253, 236, 236, 1);",
+  lightGray: "rgba(245, 245, 245, 1);",
+  b010: "rgba(0, 0, 0, 0.10);",
+  b035: "rgba(0, 0, 0, 0.35);",
+  b060: "rgba(0, 0, 0, 0.60);",
+  b070: "rgba(0, 0, 0, 0.70);",
+  b085: "rgba(0, 0, 0, 0.85);",
+};
