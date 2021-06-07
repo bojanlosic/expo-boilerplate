@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "test-nfc",
-    "slug": "test-nfc",
+    "name": "test_nfc",
+    "slug": "test_nfc",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -15,12 +15,12 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "bundleIdentifier": "rs.digitalcube.test-nfc",
+      "bundleIdentifier": "rs.digitalcube.test_nfc",
       "buildNumber": "1.0.0",
       "supportsTablet": true
     },
     "android": {
-      "package": "rs.digitalcube.test-nfc",
+      "package": "rs.digitalcube.test_nfc",
       "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
