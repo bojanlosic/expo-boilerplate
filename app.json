@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "test.nfc",
-    "slug": "test.nfc",
+    "slug": "test-nfc",
     "version": "1.0.0",
+    "plugins": ["react-native-nfc-manager"],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
