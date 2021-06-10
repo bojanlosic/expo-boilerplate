@@ -21,6 +21,12 @@ const reducer = (state = initialState, action) => {
         token: action.payload.token,
         loggedIn: true,
       };
+    case types.SET_USER_INFO:
+      return {
+        ...state,
+        user: action.payload,
+        loggedIn: true,
+      };
     case types.LOGOUT:
       return initialState;
 

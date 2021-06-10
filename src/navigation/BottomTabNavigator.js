@@ -9,6 +9,47 @@ import Colors from "../constants/Colors";
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
+// import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+// import { Text, View } from "react-native";
+// const TopTab = createMaterialTopTabNavigator();
+
+// TOP TAB NAVIGATION
+// const Chat = () => {
+//   return (
+//     <View>
+//       <Text>CHAT</Text>
+//     </View>
+//   );
+// };
+// const Video = () => {
+//   return (
+//     <View>
+//       <Text>VIDEO</Text>
+//     </View>
+//   );
+// };
+
+// const Search = () => {
+//   return (
+//     <TopTab.Navigator>
+//       <TopTab.Screen name="Chat" component={Chat} />
+//       <TopTab.Screen name="Video" component={Video} />
+//     </TopTab.Navigator>
+//   );
+// };
+
+// const SearchStackNavigator = () => {
+//   return (
+//     <Stack.Navigator
+//       screenOptions={{
+//         headerShown: false,
+//       }}
+//     >
+//       <Stack.Screen name="Search" component={Search} />
+//     </Stack.Navigator>
+//   );
+// };
+
 const HomeStackNavigator = () => {
   return (
     <Stack.Navigator
@@ -55,6 +96,7 @@ const Tabs = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeStackNavigator} />
+      {/* <Tab.Screen name="Search" component={SearchStackNavigator} /> */}
       <Tab.Screen name="More" component={MoreStackNavigator} />
     </Tab.Navigator>
   );

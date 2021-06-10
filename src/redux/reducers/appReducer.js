@@ -3,6 +3,7 @@ import * as types from "../types/actionTypes";
 const initialState = {
   isLoading: true,
   isLoadingAPI: false,
+  language: null,
   camera: false,
 };
 
@@ -17,6 +18,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoadingAPI: action.payload,
+      };
+    case types.LANGUAGE:
+      return {
+        ...state,
+        language: action.payload,
       };
     case types.SHOW_CAMERA:
       return {

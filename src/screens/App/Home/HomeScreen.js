@@ -1,10 +1,11 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { LOADING_API, SHOW_CAMERA } from "../../../redux/types/actionTypes";
 import HomeView from "./HomeView";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const app = useSelector((state) => state.app);
 
   const smaraj = () => {
     dispatch({ type: LOADING_API, payload: true });
