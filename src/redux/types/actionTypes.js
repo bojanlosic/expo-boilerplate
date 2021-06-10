@@ -8,3 +8,4 @@ export const LOADING = "LOADING";
 export const LOADING_API = "LOADING_API";
 export const SHOW_CAMERA = "SHOW_CAMERA";
 export const LANGUAGE = "LANGUAGE";
+export const NOTIFICATION = "NOTIFICATION";

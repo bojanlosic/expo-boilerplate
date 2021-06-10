@@ -4,6 +4,7 @@ const initialState = {
   isLoading: true,
   isLoadingAPI: false,
   language: null,
+  notification: null,
   camera: false,
 };
 
@@ -23,6 +24,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         language: action.payload,
+      };
+    case types.NOTIFICATION:
+      return {
+        ...state,
+        notification: action.payload,
       };
     case types.SHOW_CAMERA:
       return {

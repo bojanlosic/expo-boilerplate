@@ -26,3 +26,9 @@ export const setLanguageAction = (language) => {
     await dispatch({ type: types.LANGUAGE, payload: language });
   };
 };
+
+export const setNotificationAction = (data) => {
+  return async (dispatch) => {
+    await dispatch({ type: types.NOTIFICATION, payload: data });
+  };
+};

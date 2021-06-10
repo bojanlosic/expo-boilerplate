@@ -16,7 +16,7 @@ const Home = () => {
     }, 3000);
   };
 
-  return <HomeView dispatch={dispatch} SHOW_CAMERA={SHOW_CAMERA} smaraj={smaraj} />;
+  return <HomeView dispatch={dispatch} SHOW_CAMERA={SHOW_CAMERA} smaraj={smaraj} app={app} />;
 };
 
 export default Home;
