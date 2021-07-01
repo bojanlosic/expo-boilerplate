@@ -9,6 +9,7 @@ export default ({ userInfo, handleTextInput, login, navigation, request, promptA
       <Text>Login</Text>
       <TextInput placeholder="Email" value={userInfo.email} onChangeText={(text) => handleTextInput(text, "email")} />
       <TextInput placeholder="Password" value={userInfo.password} onChangeText={(text) => handleTextInput(text, "password")} />
+      <Button title="Forgot password?" onPress={() => navigation.navigate("ForgotPassword")} />
       <Button title="Log in" onPress={login} />
       <Button title="Don't have account?" onPress={() => navigation.navigate("Register")} />
       {/* Google login */}

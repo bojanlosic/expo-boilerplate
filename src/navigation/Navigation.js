@@ -2,7 +2,7 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { useDispatch, useSelector } from "react-redux";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, Text } from "react-native";
 import * as types from "../redux/types/actionTypes";
 import Constants from "expo-constants";
 import ScreenWrapper from "../components/ScreenWrapper";
@@ -15,6 +15,10 @@ import { storageGetItem } from "../core/storage";
 import SplashScreen from "../components/SplashScreen";
 import * as Notifications from "expo-notifications";
 import { setNotificationAction } from "../redux/actions/app";
+import ForgotPassword from "../screens/Auth/ForgotPassword/ForgotPasswordScreen";
+import ResetPassword from "../screens/Auth/ResetPassword/ResetPasswordScreen";
+import * as Linking from "expo-linking";
+import VerifyAccount from "../screens/Auth/VerifyAccount/VerifyAccountScreen";
 
 Notifications.setNotificationHandler({
   handleNotification: async () => ({
@@ -29,6 +33,20 @@ const LoginStack = createStackNavigator();
 export default function Navigation() {
   const notificationListener = React.useRef();
   const responseListener = React.useRef();
+  const prefix = Linking.createURL("/");
+  const config = {
+    screens: {
+      Login: "login",
+      Register: "register",
+      ForgotPassword: "forgot-password",
+      ResetPassword: "reset-password/:hash",
+      VerifyAccount: "verify-account/:hash",
+    },
+  };
+  const linking = {
+    prefixes: [prefix],
+    config: config,
+  };
 
   const dispatch = useDispatch();
 
@@ -130,18 +148,19 @@ export default function Navigation() {
         <UserCamera />
       ) : (
         <ScreenWrapper>
-          <NavigationContainer>
+          <NavigationContainer linking={linking} fallback={<Text>Loading...</Text>}>
             <LoginStack.Navigator
-              screenOptions={
-                {
-                  headerShown: false,
-                }
-              }
+              screenOptions={{
+                headerShown: false,
+              }}
             >
               {user.loggedIn == false ? (
                 <>
                   <LoginStack.Screen name="Login" component={Login} />
+                  <LoginStack.Screen name="ForgotPassword" component={ForgotPassword} />
+                  <LoginStack.Screen name="ResetPassword" component={ResetPassword} />
                   <LoginStack.Screen name="Register" component={Register} />
+                  <LoginStack.Screen name="VerifyAccount" component={VerifyAccount} />
                 </>
               ) : (
                 <LoginStack.Screen name="Home" component={Tabs} />
