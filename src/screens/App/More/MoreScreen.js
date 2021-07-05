@@ -17,7 +17,7 @@ const More = () => {
     dispatch(setLanguageAction(language));
   };
 
-  return <MoreView logout={logout} setLanguage={(lang) => setLanguage(lang)} />;
+  return <MoreView logout={logout} setLanguage={(lang) => setLanguage(lang)} app={app} />;
 };
 
 export default More;

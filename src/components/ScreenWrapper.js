@@ -7,12 +7,12 @@ import {
   Dimensions,
   TouchableWithoutFeedback,
   View,
-  ActivityIndicator,
-  Text,
 } from "react-native";
 import { initialWindowMetrics, SafeAreaView } from "react-native-safe-area-context";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import SplashScreen from "./SplashScreen";
+import { setStatusBarBackgroundColor, setStatusBarStyle, StatusBar } from "expo-status-bar";
+import getThemeColor from "../constants/colors/getThemeColor";
 
 const useIsFloatingKeyboard = () => {
   const [isFloating, setFloating] = React.useState(false);
@@ -34,6 +34,11 @@ const useIsFloatingKeyboard = () => {
 const ScreenWrapper = ({ children }) => {
   const isFloatingKeyboard = useIsFloatingKeyboard();
   const app = useSelector((state) => state.app);
+
+  const backgroundColor = getThemeColor("background", app.appTheme);
+  setStatusBarBackgroundColor(backgroundColor, true);
+  setStatusBarStyle(app.appTheme === "default" ? "dark" : "light");
+
   return (
     <SafeAreaView style={styles.container} initialMetrics={initialWindowMetrics}>
       {Platform.OS === "ios" ? (

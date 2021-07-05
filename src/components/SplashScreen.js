@@ -1,6 +1,6 @@
 import React from "react";
 import { ActivityIndicator, View, StyleSheet } from "react-native";
-import Colors from "../constants/colors/Colors";
+import { defaultColors as Colors } from "../constants/colors/Colors";
 
 function SplashScreen() {
   return (

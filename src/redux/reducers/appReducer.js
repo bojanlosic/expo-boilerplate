@@ -6,6 +6,7 @@ const initialState = {
   language: null,
   notification: null,
   camera: false,
+  appTheme: "default",
 };
 
 const reducer = (state = initialState, action) => {
@@ -34,6 +35,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         camera: action.payload,
+      };
+    case types.CHANGE_THEME:
+      return {
+        ...state,
+        appTheme: action.payload,
       };
 
     default:

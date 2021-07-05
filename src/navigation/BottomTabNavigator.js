@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/App/Home/HomeScreen";
 import More from "../screens/App/More/MoreScreen";
 import { MaterialIcons } from "@expo/vector-icons";
-import Colors from "../constants/colors/Colors";
+import { defaultColors as Colors } from "../constants/colors/Colors";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
