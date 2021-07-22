@@ -1,13 +1,5 @@
 import React from "react";
-import {
-  KeyboardAvoidingView,
-  Platform,
-  StyleSheet,
-  Keyboard,
-  Dimensions,
-  TouchableWithoutFeedback,
-  View,
-} from "react-native";
+import { KeyboardAvoidingView, Platform, StyleSheet, Keyboard, Dimensions, TouchableWithoutFeedback, View } from "react-native";
 import { initialWindowMetrics, SafeAreaView } from "react-native-safe-area-context";
 import { useDispatch, useSelector } from "react-redux";
 import SplashScreen from "./SplashScreen";
@@ -36,7 +28,9 @@ const ScreenWrapper = ({ children }) => {
   const app = useSelector((state) => state.app);
 
   const backgroundColor = getThemeColor("background", app.appTheme);
-  setStatusBarBackgroundColor(backgroundColor, true);
+  if (Platform.OS === "android") {
+    setStatusBarBackgroundColor(backgroundColor, true);
+  }
   setStatusBarStyle(app.appTheme === "default" ? "dark" : "light");
 
   return (

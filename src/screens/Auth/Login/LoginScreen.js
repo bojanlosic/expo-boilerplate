@@ -25,18 +25,11 @@ const Login = ({ navigation }) => {
       email: userInfo.email,
       password: userInfo.password,
     };
-    dispatch(setLoadingApiAction(true));
     try {
-      // *** Change login url
-      // await axiosService(loginConfig, credentils);
-      setTimeout(async () => {
-        await storageSetItem("token", "X");
-        dispatch(loginUserAction({ data: { token: "X", user: "Y" } }));
-        dispatch(setLoadingApiAction(false));
-      }, 1000);
-      Promise.resolve();
+      await dispatch(loginUserAction(credentils));
     } catch (error) {
-      return Promise.reject(error);
+      console.log("register page", error);
+      alert(error);
     }
   };
 

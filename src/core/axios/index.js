@@ -23,16 +23,16 @@ axios.interceptors.response.use(
 
 //*--------------------------------------*//
 
-export const axiosService = (config, data, headers) => {
+export const axiosService = (config, data, options = { headers: { "Content-Type": "application/json" } }) => {
   switch (config.method) {
     case "POST":
-      return axios.post(API_URL + config.url, data, headers);
+      return axios.post(API_URL + config.url, data, options);
     case "PUT":
-      return axios.put(API_URL + config.url, data);
+      return axios.put(API_URL + config.url, data, options);
     case "GET":
-      return axios.get(API_URL + config.url);
+      return axios.get(API_URL + config.url, options);
     case "DELETE":
-      return axios.delete(API_URL + config.url);
+      return axios.delete(API_URL + config.url, options);
     default:
       return;
   }

@@ -8,7 +8,9 @@ const VerifyAccount = ({ navigation, route }) => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
-    verifyAccount(route.params.hash);
+    if (route.params.hash) { 
+      verifyAccount(route.params.hash);
+    }
   }, [route.params.hash]);
 
   const verifyAccount = (hash) => {

@@ -7,6 +7,9 @@ const Styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "white",
   },
+  input: {
+    height: 30,
+  },
 });
 
 export default Styles;
